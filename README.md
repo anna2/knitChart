@@ -8,7 +8,7 @@ KnitChart uses Rails 5 and Angular 7 to create a simple application for creating
 
 ###Add Charts
 
-![Add charts](/readme_imgs/add_charts.png)
+![Add charts](/readme_imgs/add_chart.png)
 
 ### Edit Charts
 Select a stitch from the toolbar and then click where you would like to place it in the chart. 
