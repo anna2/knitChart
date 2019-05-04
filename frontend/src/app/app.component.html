@@ -2,19 +2,10 @@
   <div class="jumbotron">
     <h1>KnitChart</h1>
     <h2>Design your own knitting charts </h2>
+    <a class="btn btn-default" routerLink="/patterns">List Patterns</a>
+    <a class="btn btn-default" routerLink="/patterns/add">Create a Pattern</a>
   </div>
-  <div class="panel panel-primary">
-    <div class="panel-heading" style="background: greenyellow;">
 
-      <a routerLink="/patterns">Patterns</a>
-      <a routerLink="/patterns/add">Add Patterns</a>
+  <router-outlet></router-outlet>
 
-    </div>
-    <div class="panel-body">
-
-        <router-outlet></router-outlet>
-
-
-    </div>
-  </div>
 </div>

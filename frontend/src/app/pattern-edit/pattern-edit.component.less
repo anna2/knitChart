@@ -1,0 +1,42 @@
+.table.knitChart {
+  font-family: 'StitchMastery', 'arial', sans-serif;
+  width: unset;
+  table-layout: fixed;
+  margin-left:auto;
+  margin-right:auto;
+
+  tr {
+    line-height: 40px;
+  }
+  td{
+    border: 1px solid gray;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.toolBar {
+  min-height: 80px;
+  .toolBarButton {
+    font-family: 'StitchMastery', 'arial', sans-serif;
+    float: left;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border: 1px solid gray;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    background-color: aliceblue;
+  }
+}
+
+.table.knitChart, .toolBar {
+  .empty {
+    background-color: gray;
+  }
+  .selected {
+    border: 3px solid black;
+  }
+}

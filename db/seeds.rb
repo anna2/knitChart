@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Pattern.create!([
-  { name: 'Pattern 001', width: 20, height: 30, stitches: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] },
-  { name: 'Pattern 002', width: 20, height: 30, stitches: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] },
-  { name: 'Pattern 003', width: 20, height: 30, stitches: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] },
-  { name: 'Pattern 004', width: 20, height: 30, stitches: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] }
+  { name: 'Pattern 001', width: 20, height: 30, stitches: [["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"]] },
+  { name: 'Pattern 002', width: 20, height: 30, stitches: [["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"]] },
+  { name: 'Pattern 003', width: 20, height: 30, stitches: [["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"]] },
+  { name: 'Pattern 004', width: 20, height: 30, stitches: [["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"], ["k","k","k","k"]] }
 ])

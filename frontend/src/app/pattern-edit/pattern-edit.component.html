@@ -1,18 +1,22 @@
 <div class="panel panel-default" style="margin-top:10px;">
-<div class="panel-heading">
-    {{pattern.name}}
-</div>
-<div class="panel-body" style="position:relative">
-    <div class="table-responsive">
-        <table class="table">
-            <tbody>
-
-                <tr *ngFor="let row of pattern.stitches; let i = index">
-                    <td *ngFor="let stitch of row; let j = index" (click)="placeStitch(i,j)">
-                      {{stitch}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="panel-heading">
+        {{pattern.name}}
+    </div>
+    <div class="panel-body" style="position:relative">
+        <div class="toolBar col-xs-1" style="margin-top:10px;">
+            <div>Select a stitch:</div>
+            <div *ngFor="let stitch of toolBarStitches" (click)="setSelectedStitchType(stitch)" [ngClass]="{'empty' : stitch.name === 'empty', 'selected' : selectedStitchType === stitch}" class="toolBarButton">{{stitch.key}}</div>
+        </div>
+        <div class="table-responsive col-xs-11"  style="margin-top:20px;">
+            <table class="table knitChart">
+                <tbody>
+                    <tr *ngFor="let row of pattern.stitches; let i = index">
+                        <td *ngFor="let stitch of row; let j = index" (click)="placeStitch(i,j)" [ngClass]="{'empty' : stitch === ''}">
+                          {{stitch}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

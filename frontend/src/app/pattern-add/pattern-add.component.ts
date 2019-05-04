@@ -17,52 +17,48 @@ export class PatternAddComponent implements OnInit {
   public pattern : Pattern  = new Pattern();
 
   ngOnInit() {
-
     this.acRoute.params.subscribe((data : any)=>{
-    console.log(data.id);
-    if(data && data.id){
+      if(data && data.id){
         this.apiService.get("patterns/"+data.id).subscribe((data : Pattern)=>{
-        this.pattern = data;
+          this.pattern = data;
         });
-    }
-    else
-    {
-        this.pattern = new Pattern();
-    }
+      } else {
+          this.pattern = new Pattern();
+      }
     })
   }
 
   public onSubmit(){
-    console.log("Adding a pattern: " + this.pattern.name);
-    this.createGrid();
     if(this.pattern.id){
       this.apiService.update("patterns/"+this.pattern.id,this.pattern).subscribe((r)=>{
-      this.router.navigateByUrl('/patterns/edit/' + this.pattern.id);
-    })
-    }
-    else {
-    this.apiService.post("patterns",this.pattern).subscribe((r)=>{
-      this.pattern = new Pattern();
-      this.router.navigateByUrl('/patterns/edit/' + r.id);  
-    });
+        this.router.navigateByUrl('/patterns/edit/' + this.pattern.id);
+      })
+    } else {
+      this.createGrid();
+      this.apiService.post("patterns",this.pattern).subscribe((r)=>{
+        this.router.navigateByUrl('/patterns/edit/' + r.id);  
+      });
     }
   }
 
-  // a pattern is represented as an array of arrays
-  // innermost arrays represent a pattern row
-  // integers represent stitches
+  // A pattern is represented as an array of arrays.
+  // Innermost arrays represent a pattern row.
+  // Characters represent stitches.
+  // Initialize a chart with all knit stitches ("k").
+
   public createGrid() {
+    if (this.pattern && !this.pattern.width) {
+      this.pattern.width = 20;
+    }
+
+    if (this.pattern && !this.pattern.height) {
+      this.pattern.height = 20;
+    }
+
     if (this.pattern && this.pattern.width && this.pattern.height && !this.pattern.stitches) {
       this.pattern.stitches = new Array(this.pattern.height);
       for (let i = 0; i < this.pattern.height; i++) {
-        this.pattern.stitches[i] = new Array(this.pattern.width).fill(0);
-      }
-    } else {
-      this.pattern.height = 20;
-      this.pattern.width = 20;
-      this.pattern.stitches = new Array(this.pattern.height);
-      for (let i = 0; i < this.pattern.height; i++) {
-        this.pattern.stitches[i] = new Array(this.pattern.width).fill(0);
+        this.pattern.stitches[i] = new Array(this.pattern.width).fill("k");
       }
     }
   }
