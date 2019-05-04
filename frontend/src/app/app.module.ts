@@ -10,32 +10,20 @@ import { PatternAddComponent } from './pattern-add/pattern-add.component';
 import { PatternListComponent } from './pattern-list/pattern-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PatternEditComponent } from './pattern-edit/pattern-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PatternAddComponent,
-    PatternListComponent
+    PatternListComponent,
+    PatternEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: 'patterns/add',
-        component: PatternAddComponent
-      },
-      {
-        path: 'patterns/add/:id',
-        component: PatternAddComponent
-      },   
-      {
-        path: 'patterns',
-        component: PatternListComponent
-      },  
-    ]),
+    HttpClientModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

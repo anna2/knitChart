@@ -36,7 +36,7 @@ export class PatternListComponent implements OnInit {
   }
   public update(id:string){
       console.log("update : " + id );
-      this.router.navigateByUrl('/patterns/add/' + id);
+      this.router.navigateByUrl('/patterns/edit/' + id);
   }
 
   ngOnInit() {

@@ -46,6 +46,8 @@ class PatternsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pattern_params
-      params.require(:pattern).permit(:name, :stitches, :width, :height)
+      hash = params.require(:pattern).permit(:name, :width, :height, :stitches => [])
+      hash[:stitches] = params.require(:stitches) if params.has_key?(:stitches)
+      hash
     end
 end
