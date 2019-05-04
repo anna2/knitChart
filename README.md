@@ -6,7 +6,7 @@ KnitChart uses Rails 5 and Angular 7 to create a simple application for creating
 
 ![List charts](/readme_imgs/list_charts.png)
 
-###Add Charts
+### Add Charts
 
 ![Add charts](/readme_imgs/add_chart.png)
 
