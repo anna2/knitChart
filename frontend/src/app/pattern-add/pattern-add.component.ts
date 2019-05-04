@@ -30,12 +30,12 @@ export class PatternAddComponent implements OnInit {
 
   public onSubmit(){
     if(this.pattern.id){
-      this.apiService.update("patterns/"+this.pattern.id,this.pattern).subscribe((r)=>{
+      this.apiService.update("patterns/"+this.pattern.id,this.pattern).subscribe((r : Pattern)=>{
         this.router.navigateByUrl('/patterns/edit/' + this.pattern.id);
       })
     } else {
       this.createGrid();
-      this.apiService.post("patterns",this.pattern).subscribe((r)=>{
+      this.apiService.post("patterns",this.pattern).subscribe((r : Pattern)=>{
         this.router.navigateByUrl('/patterns/edit/' + r.id);  
       });
     }
